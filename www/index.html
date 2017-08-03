@@ -16,7 +16,7 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/ionic.app.css" rel="stylesheet">
 
     <style type="text/css">
       .platform-ios .manual-ios-statusbar-padding{
@@ -53,6 +53,9 @@
     
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="js/firebase.init.js"></script>
 
     <!-- Only required for Tab projects w/ pages in multiple tabs 
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
@@ -73,9 +76,26 @@
     </ion-side-menu-content>
     <ion-side-menu side="left" id="side-menu21">
       <ion-header-bar class="bar-stable">
-        <div class="title">Menu</div>
+        <div class="title">Setup</div>
       </ion-header-bar>
-      <ion-content ng-controller="menuCtrl" padding="false" class="side-menu-left has-header "></ion-content>
+      <ion-content ng-controller="setupCtrl" padding="false" class="side-menu-left has-header ">
+        <div class="spacer" style="width: 955px; height: 29px;" data-componentid="spacer1"></div>
+        <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;" data-componentid="image1">
+          <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        </div>
+        <h1 id="setup-heading4" ng-model="agentInfo.name" style="color: rgb(0, 0, 0); text-align: center;" data-componentid="heading4">{{agentInfo.name}}</h1>
+        <h4 id="setup-heading5" ng-model="agentInfo.company" style="color: rgb(0, 0, 0); text-align: center;" data-componentid="heading5">{{agentInfo.company}}</h4>
+        <h4 id="setup-heading6" ng-model="agentInfo.company" style="color: rgb(0, 0, 0); text-align: center;" data-componentid="heading6">{{agentInfo.email}} - {{agentInfo.phone}}</h4>
+        <div class="spacer" style="width: 955px; height: 29px;" data-componentid="spacer2"></div>
+        <ion-list id="setup-list1" data-componentid="list1">
+          <ion-item id="setup-list-item4" ui-sref="agentInformation()" menu-close="" style="" data-componentid="list-item4">Agent Information</ion-item>
+          <ion-item id="setup-list-item10" ui-sref="login()" menu-close="" style="" data-componentid="list-item10">Realtor / Agent PIN</ion-item>
+          <ion-item id="setup-list-item6" ui-sref="mLSInformation()" menu-close="" style="" data-componentid="list-item6">MLS Information</ion-item>
+          <ion-item id="setup-list-item7" ui-sref="clientSetup()" menu-close="" style="" data-componentid="list-item7">Seller Information</ion-item>
+          <ion-item class="balanced" id="setup-list-item8" style="" data-componentid="list-item8">Client Login</ion-item>
+          <ion-item class="assertive" id="setup-list-item13" style="" data-componentid="list-item13">Reset</ion-item>
+        </ion-list>
+      </ion-content>
     </ion-side-menu>
   </ion-side-menus>
 </div>

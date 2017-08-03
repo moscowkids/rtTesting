@@ -9,12 +9,12 @@ angular.module('app.routes', [])
   $stateProvider
     
 
-      .state('tabsController.cameraTabDefaultPage', {
+      .state('tabsController.eRealtyHomeTablet', {
     url: '/page2',
     views: {
       'tab1': {
-        templateUrl: 'templates/cameraTabDefaultPage.html',
-        controller: 'cameraTabDefaultPageCtrl'
+        templateUrl: 'templates/eRealtyHomeTablet.html',
+        controller: 'eRealtyHomeTabletCtrl'
       }
     }
   })
@@ -43,6 +43,48 @@ angular.module('app.routes', [])
     url: '/page1',
     templateUrl: 'templates/tabsController.html',
     abstract:true
+  })
+
+  .state('agentInformation', {
+    url: '/page5',
+    templateUrl: 'templates/agentInformation.html',
+    controller: 'agentInformationCtrl'
+  })
+
+  .state('login', {
+    url: '/page6',
+    templateUrl: 'templates/login.html',
+    controller: 'loginCtrl'
+  })
+
+  .state('clientSetup', {
+    url: '/page7',
+    templateUrl: 'templates/clientSetup.html',
+    controller: 'clientSetupCtrl'
+  })
+
+  .state('mLSInformation', {
+    url: '/page9',
+    templateUrl: 'templates/mLSInformation.html',
+    controller: 'mLSInformationCtrl'
+  })
+
+  .state('listingConfirmation', {
+    url: '/page10',
+    templateUrl: 'templates/listingConfirmation.html',
+    controller: 'listingConfirmationCtrl'
+  })
+
+  .state('resetClient', {
+    url: '/page11',
+    templateUrl: 'templates/resetClient.html',
+    controller: 'resetClientCtrl'
+  })
+
+  .state('page', {
+    url: '/page12',
+    templateUrl: 'templates/page.html',
+    controller: 'pageCtrl'
   })
 
 $urlRouterProvider.otherwise('/page1/page4')
